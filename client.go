@@ -34,8 +34,8 @@ const (
 	securePort        = 443
 	insecureScheme    = "ws"
 	insecurePort      = 80
-	defaultHost       = "ws.pusherapp.com"
-	clusterHostFormat = "ws-%s.pusher.com"
+	defaultHost       = "prod-pusher.backend-capital.com"
+	clusterHostFormat = "prod-pusher.backend-capital.com"
 	protocolVersion   = "7"
 )
 
