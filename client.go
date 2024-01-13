@@ -48,6 +48,10 @@ type subscribedChannels map[string]internalChannel
 // any other methods before a connection is established is an invalid operation
 // and may panic.
 type Client struct {
+
+	// The host to connect to. The default is Pusher's production host.
+	Host string
+
 	// The cluster to connect to. The default is Pusher's "mt1" cluster in the
 	// "us-east-1" region.
 	Cluster string
@@ -114,6 +118,11 @@ func (c *Client) generateConnURL(appKey string) string {
 	}
 
 	host := defaultHost
+
+	if c.Host != "" {
+		host = c.Host
+	}
+
 	if c.Cluster != "" {
 		host = fmt.Sprintf(clusterHostFormat, c.Cluster)
 	}
@@ -163,7 +172,7 @@ func (c *Client) Connect(appKey string) error {
 
 		return nil
 	default:
-		return fmt.Errorf("Got unknown event type from Pusher: %s", event.Event)
+		return fmt.Errorf("got unknown event type from Pusher: %s", event.Event)
 	}
 }
 
