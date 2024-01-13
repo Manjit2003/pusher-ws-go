@@ -14,7 +14,7 @@ import (
 	"strings"
 	"sync"
 
-	pusher "github.com/manjit2003/pusher-ws-go"
+	pusher "github.com/goguardian/pusher-ws-go"
 )
 
 var (
