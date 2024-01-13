@@ -1,4 +1,4 @@
-module github.com/tesseractpro-io/pusher-ws-go
+module github.com/manjit2003/pusher-ws-go
 
 go 1.17
 
